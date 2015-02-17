@@ -1,15 +1,23 @@
-require "iwallet_ruby_test/version"
 
 module IwalletRubyTest
-	def buildOrderItem(itemCode,itemName,unitPrice,quantity,subTotal) 
-		orderItem = 
+	def self.buildOrderItem(itemCode,itemName,unitPrice,quantity,subTotal) 
+		 OrderItem.new.initialize(itemCode,itemName,unitPrice,quantity,subTotal) 
 	end
-end
 
-/*
-class OrderItem 
+
+ class OrderItem 
+	attr_reader :itemCode,
+		:itemName,
+		:unitPrice,
+		:quantity,
+		:subTotal
 	def initialize(itemCode,itemName,unitPrice,quantity,subTotal)
-
+		@itemCode = itemCode
+		@itemName = itemName
+		@unitPrice = unitPrice
+		@quantity = quantity
+		@subTotal = subTotal
 	end
+ end
+
 end
-*/
